@@ -40,11 +40,13 @@ public class NoteActivity extends AppCompatActivity {
         noteTitle = findViewById(R.id.note_title);
         noteImage = findViewById(R.id.note_image);
 
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             isUpdate = true;
             noteId = (int) extras.getLong("noteId");
             setNote(noteId);
+            saveNote.setText("Save Note");
         }
 
         saveNote.setOnClickListener(new View.OnClickListener() {
